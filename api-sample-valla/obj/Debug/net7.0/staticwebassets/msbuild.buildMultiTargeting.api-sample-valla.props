@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\api-sample-valla.props" />
+</Project>
