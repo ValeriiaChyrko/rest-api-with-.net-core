@@ -19,7 +19,7 @@ public class VillaApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public ActionResult<VillaDto> GetVillas(int id)
+    public ActionResult<VillaDto> GetVilla(int id)
     {
         if (id < 0)
             return StatusCode(StatusCodes.Status400BadRequest, "Invalid object identification.");
@@ -40,12 +40,35 @@ public class VillaApiController : ControllerBase
         if (villaDto == null)
             return StatusCode(StatusCodes.Status400BadRequest, villaDto);
 
-        if (villaDto.Id != 0)
+        if (villaDto.Id < 0)
             return StatusCode(StatusCodes.Status500InternalServerError, "Invalid object identification.");
 
+        if (VillaStore.villasList.FirstOrDefault(v=>v.Id==villaDto.Id) != null && villaDto.Id != 0)
+        {
+            ModelState.AddModelError("IdValidationUniqueError", "Villa with such identification already exists.");
+            return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+        }
+        
         villaDto.Id = VillaStore.villasList.Last().Id + 1;
         VillaStore.villasList.Add(villaDto);
         
         return CreatedAtRoute("GetVilla", new { id = villaDto.Id }, villaDto);
+    }
+    
+    [HttpDelete("{id:int}", Name = "DeleteVilla")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult DeleteVilla(int id)
+    {
+        if (id < 0)
+            return StatusCode(StatusCodes.Status400BadRequest, "Invalid object identification.");
+
+        VillaDto? villaDto = VillaStore.villasList.FirstOrDefault(v => v.Id == id);
+        if (villaDto == null)
+            return StatusCode(StatusCodes.Status404NotFound, "There is not such villa in DataBase.");
+
+        VillaStore.villasList.Remove(villaDto);
+        return StatusCode(StatusCodes.Status204NoContent);
     }
 }
