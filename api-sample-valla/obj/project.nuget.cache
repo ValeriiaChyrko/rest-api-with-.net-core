@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dn9zsNMo9wbnTxFQ/juKZMYmkCedKzUaDPodVU2FIQnai1aXsHXlHTN5YVTyCx9rvlN5MxX14L5nBezkkaARkw==",
+  "dgSpecHash": "S2gUsA26HAfEuqW732YbSZvLF9YK4SDH7xaZDvYb/NAsFd9D3HM9u3zbo1B6SKSIAXH8QoTwdpLFoxV6uDN1Jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\api-sample-valla.csproj",
+  "projectFilePath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\api-sample-valla.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valeriia\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.7\\microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
     "C:\\Users\\Valeriia\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

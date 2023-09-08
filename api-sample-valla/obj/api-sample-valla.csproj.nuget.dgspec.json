@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\api-sample-valla.csproj": {}
+    "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\api-sample-valla.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\api-sample-valla.csproj": {
+    "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\api-sample-valla.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\api-sample-valla.csproj",
+        "projectUniqueName": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\api-sample-valla.csproj",
         "projectName": "api-sample-valla",
-        "projectPath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\api-sample-valla.csproj",
+        "projectPath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\api-sample-valla.csproj",
         "packagesPath": "C:\\Users\\Valeriia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\api-sample-valla\\obj\\",
+        "outputPath": "C:\\Users\\Valeriia\\RiderProjects\\rest-api-with-.net-core\\Projects\\api-sample-valla\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
