@@ -1,5 +1,6 @@
 ﻿using api_sample_valla.Data;
 using api_sample_valla.Models.Dto;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api_sample_valla.Controllers;
@@ -70,5 +71,42 @@ public class VillaApiController : ControllerBase
 
         VillaStore.villasList.Remove(villaDto);
         return StatusCode(StatusCodes.Status204NoContent);
+    }
+
+    [HttpPut("{id:int}", Name = "UpdateVilla")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult UpdateVilla(int id, VillaDto? villaDto)
+    {
+        if (villaDto == null || id != villaDto.Id)
+            return StatusCode(StatusCodes.Status400BadRequest, "Invalid object identification.");
+        
+        VillaDto? villaToUpdate = VillaStore.villasList.FirstOrDefault(v => v.Id == id);
+        if (villaToUpdate == null)
+            return StatusCode(StatusCodes.Status404NotFound, "There is not such villa in DataBase.");
+        
+        villaToUpdate.Name = villaDto.Name;
+        return StatusCode(StatusCodes.Status204NoContent);
+    }
+    
+    [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public IActionResult UpdatePartialVilla(int id, JsonPatchDocument<VillaDto>? patchVillaDto)
+    {
+        if (patchVillaDto == null || id < 0)
+            return StatusCode(StatusCodes.Status400BadRequest, "Invalid object identification.");
+        
+        VillaDto? villaToUpdate = VillaStore.villasList.FirstOrDefault(v => v.Id == id);
+        if (villaToUpdate == null)
+            return StatusCode(StatusCodes.Status404NotFound, "There is not such villa in DataBase.");
+        
+        patchVillaDto.ApplyTo(villaToUpdate, ModelState);
+        if (!TryValidateModel(villaToUpdate))
+            return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+        
+        return StatusCode(StatusCodes.Status204NoContent); //Test: [{ "path": "/name", "op": "replace", "value": "new villa 1"  }]
     }
 }

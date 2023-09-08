@@ -64,3 +64,7 @@ C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-vall
 C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\obj\Debug\net7.0\api-sample-valla.pdb
 C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\obj\Debug\net7.0\api-sample-valla.genruntimeconfig.cache
 C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\obj\Debug\net7.0\ref\api-sample-valla.dll
+C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Valeriia\RiderProjects\rest-api-with-.net-core\Projects\api-sample-valla\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
